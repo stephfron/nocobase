@@ -1,0 +1,23 @@
+{
+  "name": "@nocobase/plugin-proverbs-citations",
+  "version": "1.8.16",
+  "main": "./dist/server/index.js",
+  "displayName": "Proverbs & Citations",
+  "displayName.zh-CN": "格言与引用",
+  "displayName.fr-FR": "Proverbes & Citations",
+  "description": "A plugin for managing proverbs, quotes and citations with sources",
+  "description.zh-CN": "用于管理格言、引用和出处的插件",
+  "description.fr-FR": "Un plugin pour gérer les proverbes, citations et leurs sources",
+  "devDependencies": {
+    "@ant-design/icons": "5.x",
+    "@formily/react": "2.x",
+    "antd": "5.x",
+    "react": "^18.2.0",
+    "react-i18next": "^11.15.1"
+  },
+  "peerDependencies": {
+    "@nocobase/client": "1.x",
+    "@nocobase/server": "1.x",
+    "@nocobase/test": "1.x"
+  }
+}

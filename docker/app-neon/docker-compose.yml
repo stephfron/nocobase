@@ -1,0 +1,44 @@
+# NocoBase with Neon PostgreSQL (Serverless)
+#
+# This configuration allows you to run NocoBase with Neon's serverless PostgreSQL
+# Neon is a serverless PostgreSQL service: https://neon.tech/
+#
+# Usage:
+# 1. Create a Neon project at https://console.neon.tech/
+# 2. Copy your connection details
+# 3. Update the .env file with your Neon credentials
+# 4. Run: docker-compose up -d
+
+version: "3"
+
+services:
+  app:
+    image: nocobase/nocobase:latest
+    networks:
+      - nocobase
+    depends_on: []
+    environment:
+      # Application settings
+      - APP_ENV=${APP_ENV}
+      - APP_KEY=${APP_KEY}
+      - APP_PORT=${APP_PORT}
+      # Neon PostgreSQL configuration
+      - DB_DIALECT=postgres
+      - DB_HOST=${NEON_HOST}
+      - DB_PORT=5432
+      - DB_DATABASE=${NEON_DATABASE}
+      - DB_USER=${NEON_USER}
+      - DB_PASSWORD=${NEON_PASSWORD}
+      # SSL is required for Neon
+      - DB_DIALECT_OPTIONS_SSL_REJECT_UNAUTHORIZED=false
+      # Optional: Timezone
+      - TZ=${TIMEZONE}
+    volumes:
+      - ./storage:/app/nocobase/storage
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    restart: always
+
+networks:
+  nocobase:
+    driver: bridge
