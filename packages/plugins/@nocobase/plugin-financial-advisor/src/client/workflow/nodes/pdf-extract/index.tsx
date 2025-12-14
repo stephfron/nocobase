@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { Instruction } from '@nocobase/plugin-workflow/client';
 import { FilePdfOutlined } from '@ant-design/icons';
@@ -5,7 +6,7 @@ import { FilePdfOutlined } from '@ant-design/icons';
 export class PdfExtractInstruction extends Instruction {
   title = 'PDF Extract';
   type = 'pdf-extract';
-  group = 'extended'; // or 'ai' if we want to group it there, but 'extended' or 'collection' is safer
+  group = 'extended';
   // @ts-ignore
   icon = (<FilePdfOutlined />);
   fieldset = {

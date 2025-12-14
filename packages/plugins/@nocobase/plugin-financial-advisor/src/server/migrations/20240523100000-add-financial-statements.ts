@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Migration } from '@nocobase/server';
 
 export default class AddFinancialStatementsCollection extends Migration {

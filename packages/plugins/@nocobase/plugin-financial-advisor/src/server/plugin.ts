@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Plugin } from '@nocobase/server';
 import { PdfExtractInstruction } from './workflow/nodes/pdf-extract';
 

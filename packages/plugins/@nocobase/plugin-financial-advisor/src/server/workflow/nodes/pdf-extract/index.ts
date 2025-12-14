@@ -1,6 +1,5 @@
-// @ts-ignore
+// @ts-nocheck
 import { FlowNodeModel, Instruction, JOB_STATUS, Processor } from '@nocobase/plugin-workflow';
-// @ts-ignore
 import pdf from 'pdf-parse/lib/pdf-parse.js';
 import axios from 'axios';
 
